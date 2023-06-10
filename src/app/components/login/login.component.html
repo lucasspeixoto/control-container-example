@@ -1,0 +1,30 @@
+<div class="page">
+  <div class="page__header">
+    <h1 class="page__header-title">Login</h1>
+    <hr />
+  </div>
+
+  <form class="page__forms" [formGroup]="loginFormGroup">
+    <div class="page__forms--group_field-container">
+      <label>E-mail</label>
+      <input formControlName="email" type="text" />
+      <app-custom-validation-message controlName="email" />
+    </div>
+
+    <div class="page__forms--group_field-container">
+      <label>Senha</label>
+      <input formControlName="password" type="password" />
+      <app-custom-validation-message controlName="password" [minLength]="3" />
+    </div>
+  </form>
+
+  <div class="page__forms--actions">
+    <button
+      [disabled]="loginFormGroup.invalid"
+      type="button"
+      class="page__forms--actions_btn btn btn--blue"
+      >
+      Login
+    </button>
+  </div>
+</div>
